@@ -1,0 +1,24 @@
+:root {
+  --color-light-theme: #f5f5f7;
+  --color-light-main: #2aa197;
+  --color-light-accent: #57c8be;
+  --color-light-second: #7a7a7c;
+  --color-light-txt: #3a3a3c;
+  --color-ligth-border: rgba(0, 0, 0, 0.1);
+
+  --color-dark-theme: #2a2b2e;
+  --color-dark-main: #25d0bc;
+  --color-dark-accent: #0ff5e9;
+  --color-dark-second: #b0b0b2;
+  --color-dark-txt: #e8e8e9;
+  --color-dark-border: rgba(255, 255, 255, 0.1);
+
+  --border-radius-small: 10px;
+  --border-radius-large: 20px;
+
+  --font-family-base: "Open Sans", sans-serif;
+
+  --transition-duration: 0.3s;
+
+  --text-decor: none;
+}
