@@ -92,58 +92,69 @@
             </button>
           </article>
         </div>
-        <div class="registration__box">
+        <div class="registration__box" data-registration-box>
           <form action="/" class="form">
-            <h3 class="form__title">Вход</h3>
-            <p>
-              <label for="login" class="visually-hidden">Ваш логин</label>
-              <input
-                type="text"
-                name="login"
-                id="login"
-                placeholder="Логин"
-                autocomplete="username"
-                minlength="4"
-                maxlength="16"
-                required
-              />
-            </p>
-            <p>
+            <h3 class="form__title registration__title">Вход</h3>
+            <ul class="form__list">
+              <li class="form__item">
+                <label for="login" class="visually-hidden"> Ваш логин </label>
+                <input
+                  type="text"
+                  name="login"
+                  id="login"
+                  placeholder="Логин"
+                  autocomplete="username"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+                <i class="fas fa-user"></i>
+              </li>
+              <li class="form__item">
                 <div class="form__wrapper">
-                    <label for="password" class="visually-hidden">Ваш пароль</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="Пароль"
-                        autocomplete="current-password"
-                        minlength="8"
-                        maxlength="16"
-                        required
-                    />
-                    <button
-                        class="button button__password"
-                        type="button"
-                        title="Показать пароль"
-                    >
-                        <span class="visually-hidden">Показать пароль</span>
-                    </button>
+                  <label for="password" class="visually-hidden">
+                    Ваш пароль
+                  </label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Пароль"
+                    autocomplete="current-password"
+                    minlength="8"
+                    maxlength="16"
+                    required
+                  />
+                  <button
+                    class="button button__password"
+                    type="button"
+                    title="Показать пароль"
+                    data-password-btn
+                  >
+                    <span class="visually-hidden">Показать пароль</span>
+                    <i class="fas fa-eye" data-open-eye></i>
+                    <i
+                      class="fas fa-eye-slash visually-hidden"
+                      data-close-eye
+                    ></i>
+                  </button>
                 </div>
-            </p>
-            <p>
-              <button
-                class="button button__form button__form--login"
-                type="submit"
-                title="Войти в свой аккаунт"
-              >
-                Войти
-              </button>
-            </p>
-            <p>
-              <a href="/" class="form__link" target="_blank">
-                Восстановить пароль
-              </a>
-            </p>
+              </li>
+              <li class="form__item">
+                <button
+                  class="button button__form button__form--login"
+                  type="submit"
+                  title="Войти в свой аккаунт"
+                >
+                  Войти
+                </button>
+              </li>
+              <li class="form__item">
+                <a href="/" class="form__link" target="_blank">
+                  Восстановить пароль
+                </a>
+              </li>
+            </ul>
           </form>
         </div>
       </section>

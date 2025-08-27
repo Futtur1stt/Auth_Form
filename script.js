@@ -25,7 +25,7 @@ lightThemeButton.addEventListener("click", enableLightTheme);
 
 const loginButton = document.querySelector("[data-login-btn]");
 const registrationButton = document.querySelector("[data-registration-btn]");
-const registrationBox = document.querySelector(".registration__box");
+const registrationBox = document.querySelector("[data-registration-box]");
 const registrationTitleFirst = document.querySelector("[data-title-first]");
 const registrationTitleSecond = document.querySelector("[data-title-second]");
 
