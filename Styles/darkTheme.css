@@ -1,0 +1,52 @@
+body.dark-theme {
+  background-color: var(--color-dark-theme);
+}
+
+body.dark-theme .header:focus-visible {
+  border: var(--border-dark-theme);
+}
+
+body.dark-theme .header::after {
+  background-color: var(--color-dark-main);
+}
+
+body.dark-theme .header__title {
+  color: var(--color-dark-txt);
+}
+
+body.dark-theme .header__wrapper {
+  border: 2px solid var(--color-dark-main);
+  box-shadow: -4px -4px 12px hsla(0, 0%, 100%, 0.05), 4px 4px 12px #000;
+}
+
+body.dark-theme .button-theme {
+  color: var(--color-dark-main);
+}
+
+body.dark-theme .button__theme:hover {
+  background-color: var(--color-dark-accent);
+  transition-duration: var(--transition-duration);
+}
+
+body.dark-theme .button__theme:focus-visible {
+  border: var(--border-dark-theme);
+}
+
+body.dark-theme .button__theme:active {
+  color: var(--color-dark-txt);
+  background-color: var(--color-dark-second);
+}
+
+body.dark-theme .button__theme i {
+  color: var(--color-light-theme);
+  transition: all 0.3 ease;
+  transition-duration: var(--transition-duration);
+}
+
+body.dark-theme .button__theme:hover i {
+  color: var(--color-dark-theme);
+}
+
+body.dark-theme .button__theme:active i {
+  color: var(--color-dark-second);
+}

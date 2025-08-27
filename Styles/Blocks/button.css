@@ -6,3 +6,43 @@
   text-transform: uppercase;
   padding: 16px;
 }
+
+.button__theme {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--color-dark-theme);
+  transition: all 0.3 ease;
+  overflow: hidden;
+  position: relative;
+  background: transparent;
+}
+
+.button__theme:hover {
+  background-color: var(--color-light-accent);
+  transition-duration: var(--transition-duration);
+}
+
+.button__theme:focus-visible {
+  border: var(--border-light-theme);
+}
+
+.button__theme:active {
+  color: var(--color-light-theme);
+  background-color: var(--color-dark-theme);
+}
+
+.button__theme i {
+  transition: all 0.3 ease;
+  transition-duration: var(--transition-duration);
+}
+
+.button__theme:hover i {
+  transform: scale(1.2);
+  color: var(--color-light-txt);
+}
+
+.button__theme:active i {
+  color: var(--color-light-theme);
+}

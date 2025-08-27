@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Форма регистрации</title>
 
     <link rel="icon" href="./Images/fav.svg" type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <link rel="stylesheet" href="./Styles/normalize.css" />
     <link rel="stylesheet" href="./Styles/styles.css" />
@@ -16,27 +21,34 @@
     <link rel="stylesheet" href="./Styles/variables.css" />
     <link rel="stylesheet" href="./Styles/utils.css" />
 
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./Styles/Blocks/header.css" />
+    <link rel="stylesheet" href="./Styles/Blocks/button.css" />
   </head>
   <body>
     <header class="header">
       <h1 class="header__title">Форма регистрации</h1>
-      <div class="header__wrapper">
+      <div class="header__wrapper" tabindex="0">
         <button
-          class="button button__theme--light"
+          class="button button__theme"
           type="button"
-          title="Сменить тему"
+          title="Сменить на светлую тему"
+          data-theme-btn="light"
         >
           <span class="visually-hidden"> Сменить светлую тему </span>
+          <i class="fas fa-sun"></i>
         </button>
         <button
-          class="button button__theme--dark"
+          class="button button__theme"
           type="button"
-          title="Сменить тему"
+          title="Сменить на темную тему"
+          data-theme-btn="dark"
         >
           <span class="visually-hidden"> Сменить темную тему </span>
+          <i class="fas fa-moon"></i>
         </button>
       </div>
     </header>
+
+    <script src="script.js"></script>
   </body>
 </html>
