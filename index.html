@@ -54,25 +54,41 @@
       <section class="section registration__section">
         <div class="registration__wrapper">
           <article class="registration__card active">
-            <h2 class="registration__title">У вас уже есть аккаунт?</h2>
+            <h2
+              class="registration__title visually-hidden"
+              data-title-first
+              aria-hidden="true"
+            >
+              У вас уже есть аккаунт?
+            </h2>
             <button
-              class="button button__form button__form--login"
+              class="button button__form button__form--login visually-hidden"
               type="button"
               title="Войти в свой аккаунт"
+              tabindex="-1"
+              aria-hidden="true"
               data-login-btn
             >
-              Войти
+              Вход
             </button>
           </article>
           <article class="registration__card">
-            <h2 class="registration__title">У вас нет аккаунта?</h2>
+            <h2
+              class="registration__title"
+              data-title-second
+              aria-hidden="false"
+            >
+              У вас нет аккаунта?
+            </h2>
             <button
               class="button button__form button__form--registration"
               type="button"
               title="Создать свой аккаунт"
               data-registration-btn
+              tabindex="0"
+              aria-hidden="false"
             >
-              Зарегистрироваться
+              Регистрация
             </button>
           </article>
         </div>
