@@ -92,7 +92,60 @@
             </button>
           </article>
         </div>
-        <div class="registration__box"></div>
+        <div class="registration__box">
+          <form action="/" class="form">
+            <h3 class="form__title">Вход</h3>
+            <p>
+              <label for="login" class="visually-hidden">Ваш логин</label>
+              <input
+                type="text"
+                name="login"
+                id="login"
+                placeholder="Логин"
+                autocomplete="username"
+                minlength="4"
+                maxlength="16"
+                required
+              />
+            </p>
+            <p>
+                <div class="form__wrapper">
+                    <label for="password" class="visually-hidden">Ваш пароль</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Пароль"
+                        autocomplete="current-password"
+                        minlength="8"
+                        maxlength="16"
+                        required
+                    />
+                    <button
+                        class="button button__password"
+                        type="button"
+                        title="Показать пароль"
+                    >
+                        <span class="visually-hidden">Показать пароль</span>
+                    </button>
+                </div>
+            </p>
+            <p>
+              <button
+                class="button button__form button__form--login"
+                type="submit"
+                title="Войти в свой аккаунт"
+              >
+                Войти
+              </button>
+            </p>
+            <p>
+              <a href="/" class="form__link" target="_blank">
+                Восстановить пароль
+              </a>
+            </p>
+          </form>
+        </div>
       </section>
     </main>
 
