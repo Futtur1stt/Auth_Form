@@ -46,3 +46,26 @@
 .button__theme:active i {
   color: var(--color-light-theme);
 }
+
+.button__form {
+  color: var(--color-light-theme);
+  background-color: var(--color-light-main);
+  border-radius: var(--border-radius-small);
+  width: 70%;
+  height: 60px;
+}
+
+.button__form:hover {
+  color: var(--color-light-txt);
+  background-color: var(--color-light-accent);
+  transition-duration: var(--transition-duration);
+}
+
+.button__form:focus-visible {
+  border: var(--border-light-theme);
+}
+
+.button__form:active {
+  color: var(--color-light-theme);
+  background-color: var(--color-dark-theme);
+}

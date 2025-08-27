@@ -22,3 +22,15 @@ if (savedTheme === "dark") {
 
 darkThemeButton.addEventListener("click", enableDarkTheme);
 lightThemeButton.addEventListener("click", enableLightTheme);
+
+const loginButton = document.querySelector("[data-login-btn]");
+const registrationButton = document.querySelector("[data-registration-btn]");
+const registrationBox = document.querySelector(".registration__box");
+
+loginButton.addEventListener("click", () => {
+  registrationBox.classList.remove("active");
+});
+
+registrationButton.addEventListener("click", () => {
+  registrationBox.classList.add("active");
+});
