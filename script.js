@@ -68,3 +68,16 @@ registrationButton.addEventListener("click", () => {
     loginButton.focus();
   }, 300);
 });
+
+const passwordButton = document.querySelector("[data-password-btn]");
+const passwordTypeInput = document.querySelector("[data-password-input]");
+const openEyeIcon = document.querySelector("[data-open-eye]");
+const closeEyeIcon = document.querySelector("[data-close-eye]");
+
+passwordButton.addEventListener("click", () => {
+  const isPasswordHidden = passwordTypeInput.type === "password";
+  passwordTypeInput.type = isPasswordHidden ? "text" : "password";
+  passwordButton.title = isPasswordHidden ? "Скрыть пароль" : "Показать пароль";
+  openEyeIcon.classList.toggle("visually-hidden", !isPasswordHidden);
+  closeEyeIcon.classList.toggle("visually-hidden", isPasswordHidden);
+});
