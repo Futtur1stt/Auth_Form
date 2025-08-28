@@ -60,12 +60,6 @@
   left: 7px;
 }
 
-.form__icon--login {
-  position: absolute;
-  top: 122px;
-  right: 85px;
-}
-
 .form__link {
   font-size: 18px;
   line-height: 1.5;

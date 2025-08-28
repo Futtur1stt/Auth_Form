@@ -93,3 +93,42 @@ body.dark-theme .button__form:active {
   color: var(--color-light-theme);
   background-color: var(--color-dark-second);
 }
+
+body.dark-theme .form__input {
+  color: var(--color-dark-theme);
+  background-color: var(--color-dark-main);
+}
+
+body.dark-theme .form__input:hover {
+  background-color: var(--color-dark-theme);
+  color: var(--color-dark-txt);
+}
+
+body.dark-theme .form__input:hover::placeholder {
+  color: var(--color-dark-txt);
+}
+
+body.dark-theme .form__input:focus-visible {
+  border: var(--border-dark-theme);
+}
+
+body.dark-theme .form__input:active {
+  color: var(--color-light-theme);
+  background-color: var(--color-dark-second);
+}
+
+body.dark-theme .form__input::placeholder {
+  color: var(--color-dark-theme);
+}
+
+body.dark-theme .form__link {
+  color: var(--color-dark-txt);
+}
+
+body.dark-theme .form__link:focus-visible {
+  border: var(--border-dark-theme);
+}
+
+body.dark-theme .form__link:active {
+  color: var(--color-light-theme);
+}
