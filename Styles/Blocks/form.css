@@ -3,6 +3,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.form__signin {
+  left: 0;
+  transition-delay: 0.25s;
+  margin-left: 70px;
+}
+
+.form__signup {
+  left: 100%;
+  transition-delay: 0.25s;
+  margin-left: 70px;
 }
 
 .form__title {
@@ -15,7 +29,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
 }
 
 .form__wrapper {

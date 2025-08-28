@@ -94,7 +94,7 @@
           </article>
         </div>
         <div class="registration__box" data-registration-box>
-          <form action="/" class="form">
+          <form action="/" class="form form__signin">
             <h3 class="form__title registration__title">Вход</h3>
             <ul class="form__list">
               <li class="form__item">
@@ -113,32 +113,32 @@
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
-                  <label for="password" class="visually-hidden">
+                  <label for="password-signin" class="visually-hidden">
                     Ваш пароль
                   </label>
                   <input
                     class="form__input"
                     type="password"
                     name="password"
-                    id="password"
+                    id="password-signin"
                     placeholder="Пароль"
                     autocomplete="current-password"
                     minlength="8"
                     maxlength="16"
                     required
-                    data-password-input
+                    data-password-input-signin
                   />
                   <button
                     class="button button__password"
                     type="button"
                     title="Показать пароль"
-                    data-password-btn
+                    data-password-btn-signin
                   >
                     <span class="visually-hidden">Показать пароль</span>
-                    <i class="fas fa-eye form__icon" data-open-eye></i>
+                    <i class="fas fa-eye form__icon" data-open-eye-signin></i>
                     <i
                       class="fas fa-eye-slash visually-hidden"
-                      data-close-eye
+                      data-close-eye-signin
                     ></i>
                   </button>
                 </div>
@@ -156,6 +156,114 @@
                 <a href="/" class="form__link" target="_blank">
                   Восстановить пароль
                 </a>
+              </li>
+            </ul>
+          </form>
+          <form action="/" class="form form__signup">
+            <h3 class="form__title registration__title">Регистрация</h3>
+            <ul class="form__list">
+              <li class="form__item">
+                <label for="login" class="visually-hidden"> Логин </label>
+                <input
+                  class="form__input"
+                  type="text"
+                  name="login"
+                  id="login"
+                  placeholder="Логин"
+                  autocomplete="username"
+                  minlength="4"
+                  maxlength="16"
+                  required
+                />
+              </li>
+              <li class="form__item">
+                <label for="email" class="visually-hidden">
+                  Электронная почта
+                </label>
+                <input
+                  class="form__input"
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Ваша_почта@example.com"
+                  autocomplete="email"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
+              </li>
+              <li class="form__item">
+                <div class="form__wrapper">
+                  <label for="password-signup" class="visually-hidden">
+                    Пароль
+                  </label>
+                  <input
+                    class="form__input"
+                    type="password"
+                    name="password"
+                    id="password-signup"
+                    placeholder="Пароль"
+                    autocomplete="current-password"
+                    minlength="8"
+                    maxlength="16"
+                    required
+                    data-password-input-signup
+                  />
+                  <button
+                    class="button button__password"
+                    type="button"
+                    title="Показать пароль"
+                    data-password-btn-signup
+                  >
+                    <span class="visually-hidden">Показать пароль</span>
+                    <i class="fas fa-eye form__icon" data-open-eye-signup></i>
+                    <i
+                      class="fas fa-eye-slash visually-hidden"
+                      data-close-eye-signup
+                    ></i>
+                  </button>
+                </div>
+              </li>
+              <li class="form__item">
+                <div class="form__wrapper">
+                  <label for="confirm-password" class="visually-hidden">
+                    Подтвердите пароль
+                  </label>
+                  <input
+                    class="form__input"
+                    type="password"
+                    name="confirmPassword"
+                    id="confirm-password"
+                    placeholder="Подтвердите пароль"
+                    autocomplete="new-password"
+                    minlength="8"
+                    maxlength="16"
+                    required
+                    data-confirm-password-input
+                  />
+                  <button
+                    class="button button__password"
+                    type="button"
+                    title="Показать пароль"
+                    data-confirm-password-btn
+                  >
+                    <span class="visually-hidden">Показать пароль</span>
+                    <i class="fas fa-eye form__icon" data-confirm-open-eye></i>
+                    <i
+                      class="fas fa-eye-slash visually-hidden"
+                      data-confirm-close-eye
+                    ></i>
+                  </button>
+                </div>
+              </li>
+              <li class="form__item">
+                <button
+                  class="button button__form button__form--login"
+                  type="submit"
+                  title="Создать свой аккаунт"
+                >
+                  Зарегестрироваться
+                </button>
               </li>
             </ul>
           </form>

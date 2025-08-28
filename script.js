@@ -69,15 +69,77 @@ registrationButton.addEventListener("click", () => {
   }, 300);
 });
 
-const passwordButton = document.querySelector("[data-password-btn]");
-const passwordTypeInput = document.querySelector("[data-password-input]");
-const openEyeIcon = document.querySelector("[data-open-eye]");
-const closeEyeIcon = document.querySelector("[data-close-eye]");
+const passwordButtonSignIn = document.querySelector(
+  "[data-password-btn-signin]"
+);
+const passwordTypeInputSignIn = document.querySelector(
+  "[data-password-input-signin]"
+);
+const openEyeIconSignIn = document.querySelector("[data-open-eye-signin]");
+const closeEyeIconSignIn = document.querySelector("[data-close-eye-signin]");
 
-passwordButton.addEventListener("click", () => {
-  const isPasswordHidden = passwordTypeInput.type === "password";
-  passwordTypeInput.type = isPasswordHidden ? "text" : "password";
-  passwordButton.title = isPasswordHidden ? "Скрыть пароль" : "Показать пароль";
-  openEyeIcon.classList.toggle("visually-hidden", !isPasswordHidden);
-  closeEyeIcon.classList.toggle("visually-hidden", isPasswordHidden);
+passwordButtonSignIn.addEventListener("click", () => {
+  const isPasswordHidden = passwordTypeInputSignIn.type === "password";
+  passwordTypeInputSignIn.type = isPasswordHidden ? "text" : "password";
+  passwordButtonSignIn.title = isPasswordHidden
+    ? "Скрыть пароль"
+    : "Показать пароль";
+
+  if (isPasswordHidden) {
+    openEyeIconSignIn.classList.add("visually-hidden");
+    closeEyeIconSignIn.classList.remove("visually-hidden");
+  } else {
+    openEyeIconSignIn.classList.remove("visually-hidden");
+    closeEyeIconSignIn.classList.add("visually-hidden");
+  }
+});
+
+const passwordButtonSignUp = document.querySelector(
+  "[data-password-btn-signup]"
+);
+const passwordTypeInputSignUp = document.querySelector(
+  "[data-password-input-signup]"
+);
+const openEyeIconSignUp = document.querySelector("[data-open-eye-signup]");
+const closeEyeIconSignUp = document.querySelector("[data-close-eye-signup]");
+
+passwordButtonSignUp.addEventListener("click", () => {
+  const isPasswordHidden = passwordTypeInputSignUp.type === "password";
+  passwordTypeInputSignUp.type = isPasswordHidden ? "text" : "password";
+  passwordButtonSignUp.title = isPasswordHidden
+    ? "Скрыть пароль"
+    : "Показать пароль";
+
+  if (isPasswordHidden) {
+    openEyeIconSignUp.classList.add("visually-hidden");
+    closeEyeIconSignUp.classList.remove("visually-hidden");
+  } else {
+    openEyeIconSignUp.classList.remove("visually-hidden");
+    closeEyeIconSignUp.classList.add("visually-hidden");
+  }
+});
+
+const confirmPasswordButton = document.querySelector(
+  "[data-confirm-password-btn]"
+);
+const confirmPasswordTypeInput = document.querySelector(
+  "[data-confirm-password-input]"
+);
+const confirmOpenEyeIcon = document.querySelector("[data-confirm-open-eye]");
+const confirmCloseEyeIcon = document.querySelector("[data-confirm-close-eye]");
+
+confirmPasswordButton.addEventListener("click", () => {
+  const isPasswordHidden = confirmPasswordTypeInput.type === "password";
+  confirmPasswordTypeInput.type = isPasswordHidden ? "text" : "password";
+  confirmPasswordButton.title = isPasswordHidden
+    ? "Скрыть пароль"
+    : "Показать пароль";
+
+  if (isPasswordHidden) {
+    confirmOpenEyeIcon.classList.add("visually-hidden");
+    confirmCloseEyeIcon.classList.remove("visually-hidden");
+  } else {
+    confirmOpenEyeIcon.classList.remove("visually-hidden");
+    confirmCloseEyeIcon.classList.add("visually-hidden");
+  }
 });
