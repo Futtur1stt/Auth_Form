@@ -11,6 +11,7 @@ input,
 textarea,
 svg * {
   transition-duration: var(--transition-duration);
+  transition: all 0.3 ease;
 }
 
 a {

@@ -78,11 +78,13 @@ body.dark-theme .registration__box {
 body.dark-theme .button__form {
   color: var(--color-dark-theme);
   background-color: var(--color-dark-main);
+  box-shadow: 0 4px 15px rgba(37, 208, 188, 0.4);
 }
 
 body.dark-theme .button__form:hover {
   background-color: var(--color-dark-theme);
   color: var(--color-dark-txt);
+  transform: translateY(-3px);
 }
 
 body.dark-theme .button__form:focus-visible {
@@ -97,6 +99,7 @@ body.dark-theme .button__form:active {
 body.dark-theme .form__input {
   color: var(--color-dark-theme);
   background-color: var(--color-dark-main);
+  box-shadow: 0 4px 15px rgba(37, 208, 188, 0.4);
 }
 
 body.dark-theme .form__input:hover {
@@ -131,4 +134,14 @@ body.dark-theme .form__link:focus-visible {
 
 body.dark-theme .form__link:active {
   color: var(--color-light-theme);
+}
+
+body.dark-theme .tooltip:hover::after {
+  background: var(--color-light-theme);
+  color: var(--color-light-txt);
+}
+
+body.dark-theme .header__wrapper.tooltip::before {
+  background: var(--color-light-theme);
+  color: var(--color-light-txt);
 }

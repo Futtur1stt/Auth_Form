@@ -13,7 +13,6 @@
   border-radius: 50%;
   font-size: 20px;
   color: var(--color-dark-theme);
-  transition: all 0.3 ease;
   overflow: hidden;
   position: relative;
   background: transparent;
@@ -53,12 +52,14 @@
   border-radius: var(--border-radius-small);
   width: 70%;
   height: 60px;
+  box-shadow: 0 4px 15px rgba(42, 161, 151, 0.3);
 }
 
 .button__form:hover {
   color: var(--color-light-txt);
   background-color: var(--color-light-accent);
   transition-duration: var(--transition-duration);
+  transform: translateY(-3px);
 }
 
 .button__form:focus-visible {

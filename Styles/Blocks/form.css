@@ -44,6 +44,7 @@
   padding: 20px;
   border: none;
   border-radius: var(--border-radius-small);
+  box-shadow: 0 4px 15px rgba(42, 161, 151, 0.3);
   position: relative;
 }
 
@@ -79,6 +80,7 @@
   line-height: 1.5;
   letter-spacing: 1.9px;
   color: var(--color-light-txt);
+  margin-top: 20px;
 }
 
 .form__link:hover {
