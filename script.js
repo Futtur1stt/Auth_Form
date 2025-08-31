@@ -25,25 +25,29 @@ lightThemeButton.addEventListener("click", enableLightTheme);
 
 const loginButton = document.querySelector("[data-login-btn]");
 const registrationButton = document.querySelector("[data-registration-btn]");
+
+const loginTitle = document.querySelector("[data-login-title]");
+const registrationTitle = document.querySelector("[data-registration-title]");
+
 const registrationBox = document.querySelector("[data-registration-box]");
-const registrationTitleFirst = document.querySelector("[data-title-first]");
-const registrationTitleSecond = document.querySelector("[data-title-second]");
 
 loginButton.addEventListener("click", () => {
   registrationBox.classList.remove("active");
+
   setTimeout(() => {
-    registrationTitleFirst.classList.add("visually-hidden");
     loginButton.classList.add("visually-hidden");
-    registrationTitleSecond.classList.remove("visually-hidden");
-    registrationButton.classList.remove("visually-hidden");
-
-    registrationButton.setAttribute("tabindex", "0");
-    registrationButton.setAttribute("aria-hidden", "true");
-    registrationTitleSecond.setAttribute("aria-hidden", "true");
-
     loginButton.setAttribute("tabindex", "-1");
-    loginButton.setAttribute("aria-hidden", "false");
-    registrationTitleFirst.setAttribute("aria-hidden", "false");
+    loginButton.setAttribute("aria-hidden", "true");
+
+    registrationButton.classList.remove("visually-hidden");
+    registrationButton.setAttribute("tabindex", "0");
+    registrationButton.removeAttribute("aria-hidden");
+
+    loginTitle.classList.add("visually-hidden");
+    loginTitle.setAttribute("aria-hidden", "true");
+
+    registrationTitle.classList.remove("visually-hidden");
+    registrationTitle.removeAttribute("aria-hidden");
 
     registrationButton.focus();
   }, 300);
@@ -51,19 +55,21 @@ loginButton.addEventListener("click", () => {
 
 registrationButton.addEventListener("click", () => {
   registrationBox.classList.add("active");
+
   setTimeout(() => {
-    registrationTitleFirst.classList.remove("visually-hidden");
     loginButton.classList.remove("visually-hidden");
-    registrationTitleSecond.classList.add("visually-hidden");
-    registrationButton.classList.add("visually-hidden");
-
     loginButton.setAttribute("tabindex", "0");
-    loginButton.setAttribute("aria-hidden", "true");
-    registrationTitleFirst.setAttribute("aria-hidden", "true");
+    loginButton.removeAttribute("aria-hidden");
 
+    registrationButton.classList.add("visually-hidden");
     registrationButton.setAttribute("tabindex", "-1");
-    registrationButton.setAttribute("aria-hidden", "false");
-    registrationTitleSecond.setAttribute("aria-hidden", "false");
+    registrationButton.setAttribute("aria-hidden", "true");
+
+    loginTitle.classList.remove("visually-hidden");
+    loginTitle.removeAttribute("aria-hidden");
+
+    registrationTitle.classList.add("visually-hidden");
+    registrationTitle.setAttribute("aria-hidden", "true");
 
     loginButton.focus();
   }, 300);
@@ -119,27 +125,110 @@ passwordButtonSignUp.addEventListener("click", () => {
   }
 });
 
-const confirmPasswordButton = document.querySelector(
-  "[data-confirm-password-btn]"
-);
-const confirmPasswordTypeInput = document.querySelector(
-  "[data-confirm-password-input]"
-);
-const confirmOpenEyeIcon = document.querySelector("[data-confirm-open-eye]");
-const confirmCloseEyeIcon = document.querySelector("[data-confirm-close-eye]");
+class FormsValidation {
+  selectors = {
+    form: "[data-js-form]",
+    fieldErrors: "[data-js-form-field-errors]",
+  };
 
-confirmPasswordButton.addEventListener("click", () => {
-  const isPasswordHidden = confirmPasswordTypeInput.type === "password";
-  confirmPasswordTypeInput.type = isPasswordHidden ? "text" : "password";
-  confirmPasswordButton.title = isPasswordHidden
-    ? "Скрыть пароль"
-    : "Показать пароль";
+  errorMessages = {
+    valueMissing: () => "Пожалуйста, заполните данное поле",
+    patternMismatch: ({ title }) => title || "Данные не соответствуют формату ",
+    tooShort: ({ minLength }) =>
+      `Слишком короткое значение, минимум символов: ${minLength}`,
+    tooLong: ({ maxLength }) =>
+      `Слишком длинное значение, ограничение символов: ${maxLength}`,
+  };
 
-  if (isPasswordHidden) {
-    confirmOpenEyeIcon.classList.add("visually-hidden");
-    confirmCloseEyeIcon.classList.remove("visually-hidden");
-  } else {
-    confirmOpenEyeIcon.classList.remove("visually-hidden");
-    confirmCloseEyeIcon.classList.add("visually-hidden");
+  constructor() {
+    this.bindEvents();
   }
-});
+
+  manageErrors(formInputElement, errorMessages) {
+    const listItem = formInputElement.closest(".form__item");
+    const fieldErrorsElement = listItem.querySelector(
+      this.selectors.fieldErrors
+    );
+
+    fieldErrorsElement.innerHTML = errorMessages
+      .map((message) => `<span class="form__errors">${message}</span>`)
+      .join("");
+  }
+
+  validateField(formInputElement) {
+    const errors = formInputElement.validity;
+    const errorMessages = [];
+
+    Object.entries(this.errorMessages).forEach(
+      ([errorType, getErrorMessage]) => {
+        if (errors[errorType]) {
+          errorMessages.push(getErrorMessage(formInputElement));
+        }
+      }
+    );
+
+    this.manageErrors(formInputElement, errorMessages);
+
+    const isValid = errorMessages.length === 0;
+
+    formInputElement.ariaInvalid = !isValid;
+
+    return isValid;
+  }
+
+  onBlur(event) {
+    const { target } = event;
+    const isFormField = target.closest(this.selectors.form);
+    const isRequired = target.required;
+
+    if (isFormField && isRequired) {
+      this.validateField(target);
+    }
+  }
+
+  onSubmit(event) {
+    const isFormElement = event.target.matches(this.selectors.form);
+
+    if (!isFormElement) {
+      return;
+    }
+
+    const requiredControlElements = [...event.target.elements].filter(
+      ({ required }) => required
+    );
+    let isFormValid = true;
+    let firstInvalidFieldControl = null;
+
+    requiredControlElements.forEach((element) => {
+      const isFieldValid = this.validateField(element);
+
+      if (!isFieldValid) {
+        isFormValid = false;
+
+        if (!firstInvalidFieldControl) {
+          firstInvalidFieldControl = element;
+        }
+      }
+    });
+
+    if (!isFormValid) {
+      event.preventDefault();
+      firstInvalidFieldControl.focus();
+    }
+  }
+
+  bindEvents() {
+    document.addEventListener(
+      "blur",
+      (event) => {
+        this.onBlur(event);
+      },
+      { capture: true }
+    );
+    document.addEventListener("submit", (event) => {
+      this.onSubmit(event);
+    });
+  }
+}
+
+new FormsValidation();

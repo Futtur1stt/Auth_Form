@@ -1,6 +1,6 @@
 .registration__section {
-  width: 800px;
-  height: 500px;
+  width: 900px;
+  height: 600px;
   padding: 40px 0;
   position: relative;
 }
@@ -24,7 +24,7 @@
   line-height: 1.5;
   letter-spacing: 1.9px;
   color: var(--color-light-txt);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .registration__box {

@@ -5,7 +5,6 @@
   --color-light-second: #7a7a7c;
   --color-light-txt: #3a3a3c;
   --color-light-border: rgba(0, 0, 0, 0.1);
-  --color-light-error: #d93025;
 
   --color-dark-theme: #2a2b2e;
   --color-dark-main: #25d0bc;
@@ -13,7 +12,6 @@
   --color-dark-second: #b0b0b2;
   --color-dark-txt: #e8e8e9;
   --color-dark-border: rgba(255, 255, 255, 0.1);
-  --color-dark-error: #ff8b86;
 
   --border-light-theme: 1px solid var(--color-light-border);
   --border-dark-theme: 1px solid var(--color-dark-border);

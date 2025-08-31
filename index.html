@@ -60,7 +60,7 @@
           <article class="registration__card active">
             <h2
               class="registration__title visually-hidden"
-              data-title-first
+              data-login-title
               aria-hidden="true"
             >
               У вас уже есть аккаунт?
@@ -79,7 +79,7 @@
           <article class="registration__card">
             <h2
               class="registration__title"
-              data-title-second
+              data-registration-title
               aria-hidden="false"
             >
               У вас нет аккаунта?
@@ -119,11 +119,11 @@
                   minlength="4"
                   maxlength="16"
                   required
-                  aria-errormessage="login-errors"
+                  aria-errormessage="signin-login-errors"
                 />
                 <span
                   class="form__errors"
-                  id="login-errors"
+                  id="signin-login-errors"
                   data-js-form-field-errors
                 ></span>
               </li>
@@ -144,7 +144,7 @@
                     required
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
                     title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
-                    aria-errormessage="password-errors"
+                    aria-errormessage="signin-password-errors"
                     data-password-input-signin
                   />
                   <button
@@ -163,7 +163,7 @@
                 </div>
                 <span
                   class="form__errors"
-                  id="password-errors"
+                  id="signin-password-errors"
                   data-js-form-field-errors
                 ></span>
               </li>
@@ -205,10 +205,11 @@
                   minlength="4"
                   maxlength="16"
                   required
+                  aria-errormessage="signup-login-errors"
                 />
                 <span
                   class="form__errors"
-                  id="login-errors"
+                  id="signup-login-errors"
                   data-js-form-field-errors
                 ></span>
               </li>
@@ -226,13 +227,11 @@
                   minlength="8"
                   maxlength="20"
                   required
-                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|ru|net|org|info|ua|by|kz|su|рф|[a-zA-Z]{2,})"
-                  title="Введите корректный email-адрес. Пример: example@mail.ru"
-                  aria-errormessage="email-errors"
+                  aria-errormessage="signup-email-errors"
                 />
                 <span
                   class="form__errors"
-                  id="email-errors"
+                  id="signup-email-errors"
                   data-js-form-field-errors
                 ></span>
               </li>
@@ -253,7 +252,7 @@
                     required
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
                     title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
-                    aria-errormessage="password-errors"
+                    aria-errormessage="signup-password-errors"
                     data-password-input-signup
                   />
                   <button
@@ -272,47 +271,7 @@
                 </div>
                 <span
                   class="form__errors"
-                  id="password-errors"
-                  data-js-form-field-errors
-                ></span>
-              </li>
-              <li class="form__item">
-                <div class="form__wrapper">
-                  <label for="confirm-password" class="visually-hidden">
-                    Подтвердите пароль
-                  </label>
-                  <input
-                    class="form__input"
-                    type="password"
-                    name="confirmPassword"
-                    id="confirm-password"
-                    placeholder="*Подтвердите пароль"
-                    autocomplete="new-password"
-                    minlength="8"
-                    maxlength="16"
-                    required
-                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
-                    title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
-                    aria-errormessage="password-errors"
-                    data-confirm-password-input
-                  />
-                  <button
-                    class="button button__password"
-                    type="button"
-                    title="Показать пароль"
-                    data-confirm-password-btn
-                  >
-                    <span class="visually-hidden">Показать пароль</span>
-                    <i class="fas fa-eye form__icon" data-confirm-open-eye></i>
-                    <i
-                      class="fas fa-eye-slash visually-hidden"
-                      data-confirm-close-eye
-                    ></i>
-                  </button>
-                </div>
-                <span
-                  class="form__errors"
-                  id="password-errors"
+                  id="signup-password-errors"
                   data-js-form-field-errors
                 ></span>
               </li>

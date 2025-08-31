@@ -146,6 +146,6 @@ body.dark-theme .header__wrapper.tooltip::before {
   color: var(--color-light-txt);
 }
 
-body.dark-theme .form__errors {
+/* body.dark-theme .form__errors {
   color: var(--color-dark-error);
-}
+} */
