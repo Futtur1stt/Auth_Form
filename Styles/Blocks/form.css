@@ -94,3 +94,17 @@
 .form__link:active {
   color: var(--color-light-theme);
 }
+
+.form__errors {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4em;
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  color: var(--color-light-error);
+  line-height: 1.25;
+}
+
+.form__errors:empty {
+  display: none;
+}

@@ -87,7 +87,6 @@
             <button
               class="button button__form button__form--registration tooltip"
               type="button"
-              title="Создать свой аккаунт"
               data-registration-btn
               data-tooltip="Зарегестрировать свой аккаунт"
               tabindex="0"
@@ -98,7 +97,14 @@
           </article>
         </div>
         <div class="registration__box" data-registration-box>
-          <form action="/" class="form form__signin">
+          <form
+            class="form form__signin"
+            action="/"
+            id="signinform"
+            method="post"
+            novalidate
+            data-js-form
+          >
             <h3 class="form__title registration__title">Вход</h3>
             <ul class="form__list">
               <li class="form__item">
@@ -108,12 +114,18 @@
                   type="text"
                   name="login"
                   id="signin"
-                  placeholder="Логин"
+                  placeholder="*Логин"
                   autocomplete="username"
                   minlength="4"
                   maxlength="16"
                   required
+                  aria-errormessage="login-errors"
                 />
+                <span
+                  class="form__errors"
+                  id="login-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
@@ -125,11 +137,14 @@
                     type="password"
                     name="password"
                     id="password-signin"
-                    placeholder="Пароль"
+                    placeholder="*Пароль"
                     autocomplete="current-password"
                     minlength="8"
                     maxlength="16"
                     required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+                    title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
+                    aria-errormessage="password-errors"
                     data-password-input-signin
                   />
                   <button
@@ -146,6 +161,11 @@
                     ></i>
                   </button>
                 </div>
+                <span
+                  class="form__errors"
+                  id="password-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <button
@@ -163,7 +183,14 @@
               </li>
             </ul>
           </form>
-          <form action="/" class="form form__signup">
+          <form
+            class="form form__signup"
+            action="/"
+            id="signupform"
+            method="post"
+            novalidate
+            data-js-form
+          >
             <h3 class="form__title registration__title">Регистрация</h3>
             <ul class="form__list">
               <li class="form__item">
@@ -173,12 +200,17 @@
                   type="text"
                   name="login"
                   id="signup"
-                  placeholder="Логин"
+                  placeholder="*Логин"
                   autocomplete="username"
                   minlength="4"
                   maxlength="16"
                   required
                 />
+                <span
+                  class="form__errors"
+                  id="login-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <label for="email" class="visually-hidden">
@@ -189,12 +221,20 @@
                   type="text"
                   name="email"
                   id="email"
-                  placeholder="Ваша_почта@example.com"
+                  placeholder="*Ваша_почта@example.ru"
                   autocomplete="email"
                   minlength="8"
                   maxlength="20"
                   required
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|ru|net|org|info|ua|by|kz|su|рф|[a-zA-Z]{2,})"
+                  title="Введите корректный email-адрес. Пример: example@mail.ru"
+                  aria-errormessage="email-errors"
                 />
+                <span
+                  class="form__errors"
+                  id="email-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
@@ -206,11 +246,14 @@
                     type="password"
                     name="password"
                     id="password-signup"
-                    placeholder="Пароль"
+                    placeholder="*Пароль"
                     autocomplete="current-password"
                     minlength="8"
                     maxlength="16"
                     required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+                    title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
+                    aria-errormessage="password-errors"
                     data-password-input-signup
                   />
                   <button
@@ -227,6 +270,11 @@
                     ></i>
                   </button>
                 </div>
+                <span
+                  class="form__errors"
+                  id="password-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
@@ -238,11 +286,14 @@
                     type="password"
                     name="confirmPassword"
                     id="confirm-password"
-                    placeholder="Подтвердите пароль"
+                    placeholder="*Подтвердите пароль"
                     autocomplete="new-password"
                     minlength="8"
                     maxlength="16"
                     required
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}"
+                    title="Пароль должен быть длиной от 8 до 16 символов, включать как минимум одну цифру, одну букву в нижнем и одну букву в верхнем регистре"
+                    aria-errormessage="password-errors"
                     data-confirm-password-input
                   />
                   <button
@@ -259,6 +310,11 @@
                     ></i>
                   </button>
                 </div>
+                <span
+                  class="form__errors"
+                  id="password-errors"
+                  data-js-form-field-errors
+                ></span>
               </li>
               <li class="form__item">
                 <button
