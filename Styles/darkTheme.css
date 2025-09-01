@@ -39,7 +39,7 @@ body.dark-theme .button__theme:active {
 
 body.dark-theme .button__theme i {
   color: var(--color-light-theme);
-  transition: all 0.3 ease;
+  transition: var(--transition);
   transition-duration: var(--transition-duration);
 }
 
@@ -145,7 +145,3 @@ body.dark-theme .header__wrapper.tooltip::before {
   background: var(--color-light-theme);
   color: var(--color-light-txt);
 }
-
-/* body.dark-theme .form__errors {
-  color: var(--color-dark-error);
-} */

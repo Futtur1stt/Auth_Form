@@ -33,7 +33,7 @@
 }
 
 .button__theme i {
-  transition: all 0.3 ease;
+  transition: var(--transition);
   transition-duration: var(--transition-duration);
 }
 
@@ -71,7 +71,8 @@
   background-color: var(--color-dark-theme);
 }
 
-.button__form--login {
+.button__form--login,
+.button__form--registration {
   width: 200px;
 }
 

@@ -11,12 +11,16 @@
   left: 0;
   transition-delay: 0.25s;
   margin-left: 100px;
+  visibility: visible;
+  position: absolute;
 }
 
 .form__signup {
   left: 100%;
   transition-delay: 0.25s;
   margin-left: 100px;
+  visibility: hidden;
+  position: absolute;
 }
 
 .form__title {
@@ -61,7 +65,6 @@
 }
 
 .form__input:focus-visible {
-  /* outline: none; */
   border: var(--border-light-theme);
 }
 

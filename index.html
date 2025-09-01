@@ -30,25 +30,23 @@
   <body>
     <header class="header">
       <h1 class="header__title">Форма регистрации</h1>
-      <div
-        class="header__wrapper tooltip"
-        tabindex="0"
-        data-tooltip="Кнопки для смены темы"
-      >
+      <div class="header__wrapper tooltip" data-tooltip="Кнопки для смены темы">
         <button
           class="button button__theme"
           type="button"
+          aria-label="Установить светлую тему"
           data-theme-btn="light"
         >
-          <span class="visually-hidden"> Сменить светлую тему </span>
+          <span class="visually-hidden"> Установить светлую тему </span>
           <i class="fas fa-sun"></i>
         </button>
         <button
           class="button button__theme"
           type="button"
+          aria-label="Установить темную тему"
           data-theme-btn="dark"
         >
-          <span class="visually-hidden"> Сменить темную тему </span>
+          <span class="visually-hidden"> Установить темную тему </span>
           <i class="fas fa-moon"></i>
         </button>
       </div>
@@ -108,7 +106,13 @@
             <h3 class="form__title registration__title">Вход</h3>
             <ul class="form__list">
               <li class="form__item">
-                <label for="signin" class="visually-hidden"> Ваш логин </label>
+                <label
+                  for="signin"
+                  class="visually-hidden"
+                  aria-label="Ваш логин"
+                >
+                  Ваш логин
+                </label>
                 <input
                   class="form__input"
                   type="text"
@@ -129,7 +133,11 @@
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
-                  <label for="password-signin" class="visually-hidden">
+                  <label
+                    for="password-signin"
+                    class="visually-hidden"
+                    aria-label="Ваш пароль"
+                  >
                     Ваш пароль
                   </label>
                   <input
@@ -150,7 +158,7 @@
                   <button
                     class="button button__password"
                     type="button"
-                    title="Показать пароль"
+                    aria-label="Показать пароль"
                     data-password-btn-signin
                   >
                     <span class="visually-hidden">Показать пароль</span>
@@ -194,7 +202,13 @@
             <h3 class="form__title registration__title">Регистрация</h3>
             <ul class="form__list">
               <li class="form__item">
-                <label for="signup" class="visually-hidden"> Логин </label>
+                <label
+                  for="signup"
+                  class="visually-hidden"
+                  aria-label="Ваш логин"
+                >
+                  Логин
+                </label>
                 <input
                   class="form__input"
                   type="text"
@@ -214,7 +228,11 @@
                 ></span>
               </li>
               <li class="form__item">
-                <label for="email" class="visually-hidden">
+                <label
+                  for="email"
+                  class="visually-hidden"
+                  aria-label="Ваша электронная почта"
+                >
                   Электронная почта
                 </label>
                 <input
@@ -237,7 +255,11 @@
               </li>
               <li class="form__item">
                 <div class="form__wrapper">
-                  <label for="password-signup" class="visually-hidden">
+                  <label
+                    for="password-signup"
+                    class="visually-hidden"
+                    aria-label="Ваша пароль"
+                  >
                     Пароль
                   </label>
                   <input
@@ -258,10 +280,10 @@
                   <button
                     class="button button__password"
                     type="button"
-                    title="Показать пароль"
+                    aria-label="Показать пароль"
                     data-password-btn-signup
                   >
-                    <span class="visually-hidden">Показать пароль</span>
+                    <span class="visually-hidden"> Показать пароль </span>
                     <i class="fas fa-eye form__icon" data-open-eye-signup></i>
                     <i
                       class="fas fa-eye-slash visually-hidden"
@@ -277,7 +299,7 @@
               </li>
               <li class="form__item">
                 <button
-                  class="button button__form button__form--login tooltip"
+                  class="button button__form button__form--registration tooltip"
                   type="submit"
                   data-tooltip="Создать свой аккаунт"
                 >
@@ -290,6 +312,6 @@
       </section>
     </main>
 
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
