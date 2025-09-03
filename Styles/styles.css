@@ -4,3 +4,9 @@
   align-items: center;
   margin-top: 100px;
 }
+
+@media (max-width: 768px) {
+  .content {
+    margin-top: 65px;
+  }
+}
