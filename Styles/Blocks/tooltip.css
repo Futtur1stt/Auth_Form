@@ -50,3 +50,13 @@
   visibility: visible;
   transform: translateY(-50%) translateX(-20px);
 }
+
+@media (max-width: 768px) {
+  .header__wrapper.tooltip::before {
+    display: none;
+  }
+
+  .header__wrapper.tooltip:hover::before {
+    display: none;
+  }
+}

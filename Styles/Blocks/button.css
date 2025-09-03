@@ -97,3 +97,28 @@
 .button__password:active {
   color: var(--color-light-theme);
 }
+
+@media (max-width: 1100px) {
+  .button__form {
+    width: 50%;
+  }
+  .button__form--login,
+  .button__form--registration {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 12px;
+  }
+
+  .button__password {
+    right: 20px;
+  }
+
+  .button__form--registration,
+  .button__form--login {
+    margin-top: 10px;
+  }
+}
